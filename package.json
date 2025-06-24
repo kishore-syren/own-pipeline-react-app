@@ -1,6 +1,7 @@
 {
-  "name": "simple-react-app",
+  "name": "own-pipeline-react-app",
   "version": "1.0.0",
+  "homepage": "https://kishore-syren.github.io/own-pipeline-react-app",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
