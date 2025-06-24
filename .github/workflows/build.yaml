@@ -1,33 +1,36 @@
-name: Build and Deploy to github page
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branchs: main
+    branches:
+      - main
 
 permissions:
-  content: read
+  contents: read
   pages: write
   id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout source code
-      - uses: actions/checkout@v4
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      - name: Install Dependency
+      - name: Install dependencies
         run: npm install
 
       - name: Build the website
         run: npm run build
 
-      - name: upload to pages artifact   
+      - name: Upload to Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
